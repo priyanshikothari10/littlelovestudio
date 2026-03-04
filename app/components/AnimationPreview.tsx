@@ -7,7 +7,7 @@ import { FLOWERS } from "./BouquetBuilder";
 
 type FlowerId = string;
 type SelectedFlower = {
-  id: FlowerId;
+  id: string;
   index?: number;
 };
 type AnimationPreviewProps = {
@@ -223,8 +223,7 @@ export function AnimationPreview({
                     }}
                     className="absolute w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white/90 flex items-center justify-center drop-shadow-md border border-pink-100"
                   >
-                    <span className="text-2xl sm:text-3xl">{flower.emoji}</span>
-                  </motion.div>
+                    <span className="text-2xl sm:text-3xl">{(flower as any).emoji}</span>                  </motion.div>
                 );
               })}
 
