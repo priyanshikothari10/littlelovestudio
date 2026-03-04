@@ -1,7 +1,15 @@
 "use client";
 import { useState } from "react";
 
-const Spiral = ({ cx, cy, r = 9, stroke = "#1a0808", sw = 2 }) => {
+interface SpiralProps {
+  cx: number;
+  cy: number;
+  r?: number;
+  stroke?: string;
+  sw?: number;
+}
+
+const Spiral = ({ cx, cy, r = 9, stroke = "#1a0808", sw = 2 }: SpiralProps) => {
   let d = "";
   for (let i = 0; i <= 60; i++) {
     const a = (i / 60) * 2.6 * Math.PI;

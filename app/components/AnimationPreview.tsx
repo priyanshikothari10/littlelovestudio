@@ -3,9 +3,11 @@
 import { useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import html2canvas from "html2canvas";
-import BouquetBuilder from "./BouquetBuilder";
+import { FLOWERS } from "./BouquetBuilder";
+
+type FlowerId = string;
 type SelectedFlower = {
-  id: string;
+  id: FlowerId;
   index?: number;
 };
 type AnimationPreviewProps = {
@@ -196,7 +198,7 @@ export function AnimationPreview({
             <div className="relative w-56 h-56 sm:w-64 sm:h-64 rounded-full bg-gradient-to-b from-pink-50 via-rose-50 to-pink-200 border border-pink-100 shadow-md shadow-pink-200 overflow-hidden">
               {bouquetLayers.map((layer, i) => {
                 const flower = FLOWERS.find(
-                  (f) => f.id === (layer.id as FlowerId)
+                (f) => f.id === layer.id
                 )!;
                 return (
                   <motion.div

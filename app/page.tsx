@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 
-const r = (v) => Math.round(v * 1000) / 1000;
+const r = (v: number) => Math.round(v * 1000) / 1000;
 
 // ── SVG Flower Components ──────────────────────────────────────────────
 const RoseSVG = ({ size = 48, opacity = 1, rotate = 0 }) => (
