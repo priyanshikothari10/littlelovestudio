@@ -4,7 +4,9 @@ import { useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import html2canvas from "html2canvas";
 import BouquetBuilder from "./BouquetBuilder";
-
+type SelectedFlower = {
+  id: string;
+};
 type AnimationPreviewProps = {
   bouquet?: SelectedFlower[];
   photoUrls?: string[];
