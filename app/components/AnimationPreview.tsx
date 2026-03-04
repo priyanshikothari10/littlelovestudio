@@ -3,11 +3,7 @@
 import { useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import html2canvas from "html2canvas";
-import {
-  FLOWERS,
-  FlowerId,
-  SelectedFlower,
-} from "./BouquetBuilder";
+import BouquetBuilder from "./BouquetBuilder";
 
 type AnimationPreviewProps = {
   bouquet?: SelectedFlower[];

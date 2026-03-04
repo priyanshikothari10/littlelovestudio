@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 
 const Spiral = ({ cx, cy, r = 9, stroke = "#1a0808", sw = 2 }) => {
@@ -274,7 +275,7 @@ const SwordGrass = () => (
   </svg>
 );
 
-const FLOWERS = [
+export const FLOWERS = [
   { id:"rose",       name:"Rose",       icon:<Rose />,       color:"#e83040", meaning:"Love & passion",      month:"June"      },
   { id:"tulip",      name:"Tulip",      icon:<Tulip />,      color:"#f04870", meaning:"Perfect love",        month:"April"     },
   { id:"daisy",      name:"Daisy",      icon:<Daisy />,      color:"#f5c000", meaning:"Innocence & purity",  month:"April"     },
@@ -289,7 +290,7 @@ const FLOWERS = [
   { id:"wildflower", name:"Wildflower", icon:<Wildflower />, color:"#f870b8", meaning:"Joy & free spirit",   month:"June"      },
 ];
 
-const GREENERY = [
+export const GREENERY = [
   { id:"eucalyptus", name:"Eucalyptus",   icon:<Eucalyptus />  },
   { id:"tropical",   name:"Tropical Fan", icon:<TropicalFan /> },
   { id:"wispy",      name:"Wispy Sprigs", icon:<WispySprigs /> },
