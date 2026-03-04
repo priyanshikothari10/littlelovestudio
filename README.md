@@ -1,36 +1,138 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌸 Little Love Studio
 
-## Getting Started
+**Little Love Studio** is a beautiful interactive web application that allows users to create and send a **virtual bouquet filled with emotions**.
+Users can choose flowers, set a mood, write heartfelt messages, and send a personalized digital surprise.
 
-First, run the development server:
+The platform focuses on **emotional storytelling through design**, combining animated bouquets, handwritten letters, and aesthetic UI to create memorable experiences.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+# ✨ Features
+
+### 💐 Bouquet Builder
+
+* Choose from multiple hand-illustrated flowers
+* Automatically arranged bouquet layout
+* Add greenery and decorative elements
+* Up to **10 flowers per bouquet**
+
+### 🎭 Mood Selection
+
+Select the emotional tone of your bouquet:
+
+* Romantic
+* Playful
+* Tender
+* Passionate
+* Grateful
+* Nostalgic
+
+### 💌 Write a Letter
+
+* Add **To / From** fields
+* Write a personalized message
+* Beautiful handwritten-style preview
+* Live preview of the letter card
+
+### 🎁 Animated Surprise
+
+* A gift-style reveal animation
+* Beautiful bouquet opening experience
+* Emotional storytelling through UI
+
+### 🔗 Share Anywhere
+
+* Generate a bouquet
+* Share the surprise with someone special
+
+---
+
+## 🛠 Tech Stack
+
+**Frontend**
+
+* Next.js
+* React
+* TypeScript
+* Tailwind CSS
+
+**Design & UI**
+
+* SVG Illustrations
+* Custom Animations
+* Responsive Layout
+
+**Development Tools**
+
+* Node.js
+* npm
+* Git & GitHub
+* VS Code
+
+
+---
+
+# 🚀 Getting Started
+
+Clone the repository:
+
+```
+git clone https://github.com/priyanshikothari10/littlelovestudio.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Navigate to the project folder:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+cd littlelovestudio
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Install dependencies:
 
-## Learn More
+```
+npm install
+```
 
-To learn more about Next.js, take a look at the following resources:
+Run the development server:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Open in browser:
 
-## Deploy on Vercel
+```
+http://localhost:3000
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# 🌷 How It Works
+
+1. Choose your flowers
+2. Select the mood of your bouquet
+3. Write a heartfelt message
+4. Preview and send your digital surprise
+
+---
+
+# 🌟 Future Improvements
+
+* Drag & drop bouquet arrangement
+* Save bouquet history
+* Add music to bouquet reveal
+* More flower varieties
+* Shareable bouquet link
+
+---
+
+# 👩‍💻 Author
+
+**Priyanshi Kothari**
+B.Tech – Artificial Intelligence & Data Science
+Arya College of Engineering & IT, Jaipur
+
+---
+
+# 📄 License
+
+This project is licensed under the **MIT License**.
