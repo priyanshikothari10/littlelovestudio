@@ -6,6 +6,7 @@ import html2canvas from "html2canvas";
 import BouquetBuilder from "./BouquetBuilder";
 type SelectedFlower = {
   id: string;
+  index?: number;
 };
 type AnimationPreviewProps = {
   bouquet?: SelectedFlower[];
