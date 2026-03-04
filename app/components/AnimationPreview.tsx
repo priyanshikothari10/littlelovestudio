@@ -223,7 +223,8 @@ export function AnimationPreview({
                     }}
                     className="absolute w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white/90 flex items-center justify-center drop-shadow-md border border-pink-100"
                   >
-                    <span className="text-2xl sm:text-3xl">{(flower as any).emoji}</span>                  </motion.div>
+                    <span className="text-2xl sm:text-3xl">{flower.icon}</span>
+                  </motion.div>
                 );
               })}
 
@@ -349,65 +350,54 @@ export function AnimationPreview({
                         left: layer.left,
                         top: layer.top,
                         transform: `translate(-50%, -50%) rotate(${layer.rotation}deg)`,
-                        zIndex: layer.zIndex,
                       }}
-                      className="absolute w-16 h-16 rounded-full bg-white/90 flex items-center justify-center drop-shadow-md border border-pink-100"
                     >
-                      <span className="text-2xl">{flower.emoji}</span>
+                      <motion.div
+                        style={{
+                          left: layer.left,
+                          top: layer.top,
+                          zIndex: layer.zIndex,
+                        }}
+                        initial={{ opacity: 0, scale: 0.7, y: 10 }}
+                        animate={{
+                          opacity: 1,
+                          scale: 1,
+                          y: [0, -3, 0],
+                          rotate: layer.rotation,
+                        }}
+                        transition={{
+                          opacity: { duration: 0.3 },
+                          scale: { duration: 0.3 },
+                          y: { duration: 3, repeat: Infinity, ease: "easeInOut" },
+                          rotate: { duration: 0.3 },
+                        }}
+                        className="absolute w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white/90 flex items-center justify-center drop-shadow-md border border-pink-100"
+                      >
+                        <span className="text-2xl sm:text-3xl">{flower.icon}</span>
+                      </motion.div>
                     </div>
                   );
                 })}
-                <div className="absolute bottom-3 inset-x-0 flex items-center justify-center">
-                  <div className="h-9 w-24 bg-emerald-600 rounded-full blur-md opacity-40" />
-                </div>
-              </div>
-            </div>
-
-            <div className="flex-1 flex flex-col justify-center">
-              <div
-                className="rounded-2xl shadow-sm p-4 space-y-3"
-                style={{
-                  background: "#fff7fb",
-                  border: "1px solid #f9c5d5",
-                }}
-              >
-                <div className="flex items-center justify-between gap-2">
-                  <h3 className="text-sm font-semibold text-pink-700 flex items-center gap-1.5">
-                    Love Letter
-                    <span aria-hidden="true">💌</span>
-                  </h3>
-                  {animationName && (
-                    <span className="inline-flex items-center rounded-full bg-pink-500/10 text-[10px] text-pink-700 px-2 py-0.5 border border-pink-300/50">
-                      {animationName}
-                    </span>
-                  )}
-                </div>
-                <p className="text-xs text-pink-800 whitespace-pre-line leading-relaxed">
-                  {hasLetter
-                    ? loveLetter
-                    : "Your future love letter will appear here, softly animated for someone special."}
-                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="flex flex-col sm:flex-row sm:justify-end gap-2.5 sm:gap-3">
+      {/* Action buttons */}
+      <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
         <button
-          type="button"
           onClick={handleDownload}
-          className="inline-flex items-center justify-center rounded-full px-4 sm:px-5 py-2 text-xs sm:text-sm font-semibold bg-white text-pink-700 border border-pink-200 shadow-sm hover:bg-pink-50 transition disabled:opacity-60 disabled:cursor-wait"
           disabled={isDownloading}
+          className="flex-1 px-4 py-2.5 sm:py-3 bg-pink-500 hover:bg-pink-600 disabled:bg-pink-400 text-white font-medium rounded-lg transition"
         >
-          {isDownloading ? "Preparing Download…" : "Download Animation"}
+          {isDownloading ? "Downloading..." : "Download"}
         </button>
         <button
-          type="button"
           onClick={handleShare}
-          className="inline-flex items-center justify-center rounded-full px-4 sm:px-5 py-2 text-xs sm:text-sm font-semibold bg-pink-500 hover:bg-pink-600 text-white shadow-md shadow-pink-200 transition"
+          className="flex-1 px-4 py-2.5 sm:py-3 bg-rose-300 hover:bg-rose-400 text-white font-medium rounded-lg transition"
         >
-          Share with Loved One
+          Share
         </button>
       </div>
     </section>

@@ -240,14 +240,14 @@ const Eucalyptus = () => (
 
 const TropicalFan = () => (
   <svg viewBox="0 0 130 120" width="86" height="80">
-    {[
+    {([
       {d:"M65 110 C50 90 20 70 10 40 C18 36 30 54 48 74 C56 84 62 96 65 110Z",f:"#1a5c30"},
       {d:"M65 110 C55 85 35 60 30 28 C38 24 48 50 58 76 C61 88 63 100 65 110Z",f:"#246638"},
       {d:"M65 110 C60 82 50 52 54 20 C62 18 64 50 65 78 C65 92 65 102 65 110Z",f:"#1e6034"},
       {d:"M65 110 C70 82 80 52 76 20 C84 22 80 50 74 78 C70 92 67 102 65 110Z",f:"#246638"},
       {d:"M65 110 C75 85 95 60 100 28 C108 32 96 54 82 76 C74 88 68 100 65 110Z",f:"#1e6034"},
       {d:"M65 110 C80 90 108 70 120 40 C114 36 100 56 82 74 C74 84 68 96 65 110Z",f:"#1a5c30"},
-    ].map((l,i)=>(
+    ]).map((l,i)=>(
       <g key={i}><path d={l.d} fill={l.f} opacity="0.92"/><path d={l.d} fill="none" stroke="#0c2818" strokeWidth="1.5" opacity="0.72"/></g>
     ))}
   </svg>
@@ -269,7 +269,7 @@ const WispySprigs = () => (
 
 const SwordGrass = () => (
   <svg viewBox="0 0 140 120" width="92" height="80">
-    {[
+    {([
       {d:"M70 118 C64 95 42 68 8 52 C10 44 36 64 60 88 C66 96 69 108 70 118Z",f:"#1a5c30"},
       {d:"M70 118 C66 92 50 62 24 42 C26 34 46 58 64 86 C67 98 69 110 70 118Z",f:"#246638"},
       {d:"M70 118 C68 90 58 58 42 34 C50 28 62 56 68 86 C69 100 70 110 70 118Z",f:"#1e6034"},
@@ -277,7 +277,7 @@ const SwordGrass = () => (
       {d:"M70 118 C72 90 82 58 98 34 C106 40 88 60 74 88 C72 100 71 110 70 118Z",f:"#1e6034"},
       {d:"M70 118 C74 92 90 62 116 42 C120 50 96 66 76 90 C73 98 71 110 70 118Z",f:"#246638"},
       {d:"M70 118 C76 95 98 68 132 52 C132 60 106 72 78 94 C74 102 71 112 70 118Z",f:"#1a5c30"},
-    ].map((b,i)=>(
+    ]).map((b,i)=>(
       <g key={i}><path d={b.d} fill={b.f} opacity="0.90"/><path d={b.d} fill="none" stroke="#0c2818" strokeWidth="1.4" opacity="0.68"/></g>
     ))}
   </svg>
@@ -306,12 +306,12 @@ export const GREENERY = [
 ];
 
 export default function BouquetBuilder() {
-  const [selF, setSelF] = useState([]);
-  const [selG, setSelG] = useState([]);
-  const [hov,  setHov]  = useState(null);
+  const [selF, setSelF] = useState<string[]>([]);
+  const [selG, setSelG] = useState<string[]>([]);
+  const [hov,  setHov]  = useState<string | null>(null);
 
-  const toggleF = id => setSelF(p => p.includes(id) ? p.filter(x=>x!==id) : p.length<10 ? [...p,id] : p);
-  const toggleG = id => setSelG(p => p.includes(id) ? p.filter(x=>x!==id) : [...p,id]);
+  const toggleF = (id: string) => setSelF(p => p.includes(id) ? p.filter(x=>x!==id) : p.length<10 ? [...p,id] : p);
+  const toggleG = (id: string) => setSelG(p => p.includes(id) ? p.filter(x=>x!==id) : [...p,id]);
   const hovF = FLOWERS.find(f => f.id === hov);
 
   return (

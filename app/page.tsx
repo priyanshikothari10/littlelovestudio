@@ -1,4 +1,3 @@
-
 "use client";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
@@ -106,7 +105,7 @@ const LavenderSVG = ({ size = 48, opacity = 1, rotate = 0 }) => (
 );
 
 // ── Floating petal particle ────────────────────────────────────────────
-const FloatingPetal = ({ style }) => (
+const FloatingPetal = ({ style }: { style: React.CSSProperties }) => (
   <div className="floating-petal" style={style}>
     <svg width="14" height="18" viewBox="0 0 14 18">
       <ellipse cx="7" cy="9" rx="5" ry="8" fill="currentColor" opacity="0.6"/>
@@ -115,7 +114,7 @@ const FloatingPetal = ({ style }) => (
 );
 
 // ── Sparkle ────────────────────────────────────────────────────────────
-const Sparkle = ({ x, y, delay, size = 16 }) => (
+const Sparkle = ({ x, y, delay, size = 16 }: { x: string; y: string; delay: string; size?: number }) => (
   <div className="sparkle" style={{ left: x, top: y, animationDelay: delay, width: size, height: size }}>
     <svg viewBox="0 0 24 24" fill="none">
       <path d="M12 2 L13.5 10.5 L22 12 L13.5 13.5 L12 22 L10.5 13.5 L2 12 L10.5 10.5 Z"
@@ -125,7 +124,7 @@ const Sparkle = ({ x, y, delay, size = 16 }) => (
 );
 
 // ── Feature Card ───────────────────────────────────────────────────────
-const FeatureCard = ({ icon, title, desc, delay }) => (
+const FeatureCard = ({ icon, title, desc, delay }: { icon: string; title: string; desc: string; delay: string }) => (
   <div className="feature-card" style={{ animationDelay: delay }}>
     <div className="feature-icon">{icon}</div>
     <h3 className="feature-title">{title}</h3>
@@ -134,7 +133,7 @@ const FeatureCard = ({ icon, title, desc, delay }) => (
 );
 
 // ── Testimonial ────────────────────────────────────────────────────────
-const Testimonial = ({ quote, name, emoji, delay }) => (
+const Testimonial = ({ quote, name, emoji, delay }: { quote: string; name: string; emoji: string; delay: string }) => (
   <div className="testimonial" style={{ animationDelay: delay }}>
     <p className="testimonial-quote">"{quote}"</p>
     <span className="testimonial-name">{emoji} {name}</span>
@@ -969,12 +968,12 @@ export default function LittleLoveStudioLanding() {
         <h2 className="section-title">Four steps to <em>magic</em></h2>
         <p className="section-sub">Simple enough to feel effortless, beautiful enough to feel intentional.</p>
         <div className="steps">
-          {[
+          {([
             { icon: "🌸", title: "Choose Your Blooms", desc: "Pick from hand-illustrated watercolor flowers and arrange up to 10 blooms your way.", num: 1 },
             { icon: "✨", title: "Add the Magic", desc: "Layer in animations, soft greenery, and watch your bouquet come to life.", num: 2 },
             { icon: "💌", title: "Write from the Heart", desc: "Add a message, upload a photo or short video — make it completely yours.", num: 3 },
             { icon: "🎁", title: "Send the Surprise", desc: "Share a link, and they receive a beautiful animated bouquet on any device.", num: 4 },
-          ].map(s => (
+          ]).map(s => (
             <div className="step" key={s.num}>
               <div className="step-num">{s.num}</div>
               <div className="step-icon">{s.icon}</div>
@@ -1016,14 +1015,14 @@ export default function LittleLoveStudioLanding() {
         <h2 className="section-title">Built for <em>real feelings</em></h2>
         <p className="section-sub">Not just pretty — designed to actually move people.</p>
         <div className="features-grid">
-          {[
+          {([
             { icon: "🎨", title: "Watercolor Illustrations", desc: "Every flower is a delicate SVG watercolor — soft, romantic, and beautiful at any size.", delay: "0s" },
             { icon: "📸", title: "Photos & Videos", desc: "Embed a favourite photo or a short video message right inside the bouquet reveal.", delay: "0.1s" },
             { icon: "✍️", title: "Heartfelt Letters", desc: "Write your message with a beautiful font and soft paper texture background.", delay: "0.2s" },
             { icon: "🎬", title: "Animated Reveal", desc: "Recipients get a cinematic opening experience — petals bloom one by one on screen.", delay: "0.3s" },
             { icon: "🔗", title: "Share Anywhere", desc: "Send via link — works on every phone, tablet, and browser with no app needed.", delay: "0.4s" },
             { icon: "💾", title: "Keep Forever", desc: "Bouquets are saved and can be revisited any time — a digital keepsake.", delay: "0.5s" },
-          ].map(f => <FeatureCard key={f.title} {...f} />)}
+          ]).map(f => <FeatureCard key={f.title} {...f} />)}
         </div>
       </section>
 
@@ -1033,11 +1032,11 @@ export default function LittleLoveStudioLanding() {
         <h2 className="section-title">What people are <em>saying</em></h2>
         <p className="section-sub">Real reactions from real surprises.</p>
         <div className="testimonials-grid">
-          {[
+          {([
             { quote: "I sent this to my girlfriend on our anniversary and she cried the happiest tears. It felt so personal and magical — nothing like a normal e-card.", name: "Marco R.", emoji: "🌹", delay: "0s" },
             { quote: "I'm not creative at all but this made me feel like an artist. The bouquet I made looked genuinely beautiful. She saved the link and still looks at it.", name: "Priya S.", emoji: "🌸", delay: "0.15s" },
             { quote: "My long-distance partner opened it at midnight and called me instantly. The animated reveal is just breathtaking — I can't believe how lovely it is.", name: "Yuki T.", emoji: "💌", delay: "0.3s" },
-          ].map(t => <Testimonial key={t.name} {...t} />)}
+          ]).map(t => <Testimonial key={t.name} {...t} />)}
         </div>
       </section>
 
@@ -1080,10 +1079,10 @@ export default function LittleLoveStudioLanding() {
 
 // ── Cursor Tracker ─────────────────────────────────────────────────────
 function CursorTrail() {
-  const cursorRef = useRef(null);
-  const dotRef = useRef(null);
+  const cursorRef = useRef<HTMLDivElement>(null);
+  const dotRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    const move = (e) => {
+    const move = (e: MouseEvent) => {
       if (cursorRef.current) {
         cursorRef.current.style.left = e.clientX + "px";
         cursorRef.current.style.top  = e.clientY + "px";
@@ -1126,19 +1125,19 @@ function BouquetShowcase() {
         background: "radial-gradient(ellipse, rgba(249,168,201,0.25) 0%, transparent 70%)",
         borderRadius: "50%",
         filter: "blur(20px)",
-      }}/>
+      }} />
 
       {/* Flowers */}
       {flowers.map((f, i) => (
         <div key={i} style={{
           position: "absolute",
-          left: f.x, top: f.y,
+          left: `${f.x}px`,
+          top: `${f.y}px`,
           transform: `rotate(${f.rotate}deg)`,
-          "--r": `${f.rotate}deg`,
           animation: `gentleSway ${3.5 + i*0.4}s ease-in-out infinite`,
           animationDelay: f.delay,
           filter: "drop-shadow(0 4px 8px rgba(244,114,182,0.25))",
-        }}>
+        } as React.CSSProperties}>
           <f.Component size={f.size} opacity={0.95}/>
         </div>
       ))}
@@ -1146,7 +1145,7 @@ function BouquetShowcase() {
       {/* Stems */}
       <svg style={{ position: "absolute", bottom: 60, left: "50%", transform: "translateX(-50%)" }}
         width="160" height="120" viewBox="0 0 160 120">
-        {[
+        {([
           "M 30 0 Q 40 60 70 110",
           "M 50 0 Q 55 55 72 110",
           "M 75 0 Q 76 50 74 110",
@@ -1154,7 +1153,7 @@ function BouquetShowcase() {
           "M 118 0 Q 110 60 78 110",
           "M 40 15 Q 48 60 71 110",
           "M 108 18 Q 102 60 77 110",
-        ].map((d, i) => (
+        ]).map((d, i) => (
           <path key={i} d={d} stroke="#86efac" strokeWidth="2" fill="none" strokeLinecap="round" opacity="0.7"/>
         ))}
       </svg>
@@ -1168,7 +1167,7 @@ function BouquetShowcase() {
         borderRadius: "50% 50% 20% 20% / 40% 40% 20% 20%",
         border: "1.5px solid rgba(253,230,138,0.9)",
         boxShadow: "0 4px 16px rgba(253,230,138,0.3)",
-      }}/>
+      }} />
       {/* Bow */}
       <div style={{
         position: "absolute", bottom: 36, left: "50%",
@@ -1179,13 +1178,13 @@ function BouquetShowcase() {
           width: 22, height: 14, background: "rgba(196,181,253,0.8)",
           borderRadius: "50% 0 0 50%",
           boxShadow: "inset 0 2px 4px rgba(255,255,255,0.4)",
-        }}/>
-        <div style={{ width: 10, height: 10, background: "rgba(196,181,253,0.9)", borderRadius: "50%" }}/>
+        }} />
+        <div style={{ width: 10, height: 10, background: "rgba(196,181,253,0.9)", borderRadius: "50%" }} />
         <div style={{
           width: 22, height: 14, background: "rgba(196,181,253,0.8)",
           borderRadius: "0 50% 50% 0",
           boxShadow: "inset 0 2px 4px rgba(255,255,255,0.4)",
-        }}/>
+        }} />
       </div>
     </div>
   );
