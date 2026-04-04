@@ -196,6 +196,10 @@ export const FLOWERS = [
   { id:"hydrangea", name:"Hydrangea", icon:<Hydrangea />, color:"#8ea5c3", meaning:"Gratitude", month:"May" },
   { id:"lavender", name:"Lavender", icon:<Lavender />, color:"#9b8dcf", meaning:"Calmness", month:"July" },
 ];
+const Eucalyptus = () => <svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 22 L12 2" stroke="#16a34a" strokeWidth="2"/></svg>;
+const TropicalFan = () => <svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 22 L12 2" stroke="#15803d" strokeWidth="2"/></svg>;
+const WispySprigs = () => <svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 22 L12 2" stroke="#166534" strokeWidth="2"/></svg>;
+const SwordGrass = () => <svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 22 L12 2" stroke="#14532d" strokeWidth="2"/></svg>;
 
 export const GREENERY = [
   { id:"eucalyptus", name:"Eucalyptus",   icon:<Eucalyptus />  },
