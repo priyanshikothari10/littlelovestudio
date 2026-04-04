@@ -196,10 +196,64 @@ export const FLOWERS = [
   { id:"hydrangea", name:"Hydrangea", icon:<Hydrangea />, color:"#8ea5c3", meaning:"Gratitude", month:"May" },
   { id:"lavender", name:"Lavender", icon:<Lavender />, color:"#9b8dcf", meaning:"Calmness", month:"July" },
 ];
-const Eucalyptus = () => <svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 22 L12 2" stroke="#16a34a" strokeWidth="2"/></svg>;
-const TropicalFan = () => <svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 22 L12 2" stroke="#15803d" strokeWidth="2"/></svg>;
-const WispySprigs = () => <svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 22 L12 2" stroke="#166534" strokeWidth="2"/></svg>;
-const SwordGrass = () => <svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 22 L12 2" stroke="#14532d" strokeWidth="2"/></svg>;
+const Eucalyptus = () => (
+  <svg viewBox="0 0 90 110" width="58" height="72">
+    <path d="M45 105 Q42 85 38 68 Q34 52 28 36 Q22 20 26 8" stroke="#1e5c38" strokeWidth="2.2" fill="none" strokeLinecap="round"/>
+    {[{y:22,lx:18,rx:38,la:-30,ra:20},{y:36,lx:15,rx:40,la:-25,ra:18},{y:50,lx:13,rx:42,la:-20,ra:15},{y:64,lx:15,rx:42,la:-18,ra:14},{y:78,lx:18,rx:42,la:-15,ra:12},{y:90,lx:22,rx:42,la:-10,ra:8}].map((l,i)=>(
+      <g key={i}>
+        <ellipse cx={l.lx} cy={l.y} rx="11" ry="7" fill={i%2===0?"#2a6e48":"#1e5c38"} opacity="0.90" transform={`rotate(${l.la} ${l.lx} ${l.y})`}/>
+        <ellipse cx={l.lx} cy={l.y} rx="11" ry="7" fill="none" stroke="#102818" strokeWidth="1.3" transform={`rotate(${l.la} ${l.lx} ${l.y})`}/>
+        <ellipse cx={l.rx} cy={l.y} rx="11" ry="7" fill={i%2===0?"#1e5c38":"#2a6e48"} opacity="0.84" transform={`rotate(${l.ra} ${l.rx} ${l.y})`}/>
+        <ellipse cx={l.rx} cy={l.y} rx="11" ry="7" fill="none" stroke="#102818" strokeWidth="1.3" transform={`rotate(${l.ra} ${l.rx} ${l.y})`}/>
+      </g>
+    ))}
+  </svg>
+);
+
+const TropicalFan = () => (
+  <svg viewBox="0 0 130 120" width="86" height="80">
+    {([
+      {d:"M65 110 C50 90 20 70 10 40 C18 36 30 54 48 74 C56 84 62 96 65 110Z",f:"#1a5c30"},
+      {d:"M65 110 C55 85 35 60 30 28 C38 24 48 50 58 76 C61 88 63 100 65 110Z",f:"#246638"},
+      {d:"M65 110 C60 82 50 52 54 20 C62 18 64 50 65 78 C65 92 65 102 65 110Z",f:"#1e6034"},
+      {d:"M65 110 C70 82 80 52 76 20 C84 22 80 50 74 78 C70 92 67 102 65 110Z",f:"#246638"},
+      {d:"M65 110 C75 85 95 60 100 28 C108 32 96 54 82 76 C74 88 68 100 65 110Z",f:"#1e6034"},
+      {d:"M65 110 C80 90 108 70 120 40 C114 36 100 56 82 74 C74 84 68 96 65 110Z",f:"#1a5c30"},
+    ]).map((l,i)=>(
+      <g key={i}><path d={l.d} fill={l.f} opacity="0.92"/><path d={l.d} fill="none" stroke="#0c2818" strokeWidth="1.5" opacity="0.72"/></g>
+    ))}
+  </svg>
+);
+
+const WispySprigs = () => (
+  <svg viewBox="0 0 100 110" width="64" height="72">
+    <path d="M50 108 Q49 90 48 72 Q47 56 44 40 Q41 26 42 14" stroke="#3a6a30" strokeWidth="1.9" fill="none" strokeLinecap="round"/>
+    {["M44 40 Q36 32 26 28 Q20 22 16 14","M44 40 Q52 32 62 28 Q68 22 72 14","M46 56 Q38 48 28 46 Q22 42 18 36","M46 56 Q54 48 64 46 Q70 42 74 36","M47 70 Q40 64 32 62 Q26 58 22 52","M47 70 Q55 64 62 62 Q68 58 72 52"].map((d,i)=>
+      <path key={i} d={d} stroke="#3a6a30" strokeWidth="1.3" fill="none" strokeLinecap="round"/>)}
+    {[{cx:16,cy:14},{cx:72,cy:14},{cx:42,cy:14},{cx:18,cy:36},{cx:74,cy:36},{cx:22,cy:52},{cx:72,cy:52},{cx:26,cy:28},{cx:68,cy:28}].map((b,i)=>(
+      <g key={i}>
+        <circle cx={b.cx} cy={b.cy} r="3.4" fill="#d4e8c0"/>
+        <circle cx={b.cx} cy={b.cy} r="3.4" fill="none" stroke="#2a4820" strokeWidth="1.1"/>
+      </g>
+    ))}
+  </svg>
+);
+
+const SwordGrass = () => (
+  <svg viewBox="0 0 140 120" width="92" height="80">
+    {([
+      {d:"M70 118 C64 95 42 68 8 52 C10 44 36 64 60 88 C66 96 69 108 70 118Z",f:"#1a5c30"},
+      {d:"M70 118 C66 92 50 62 24 42 C26 34 46 58 64 86 C67 98 69 110 70 118Z",f:"#246638"},
+      {d:"M70 118 C68 90 58 58 42 34 C50 28 62 56 68 86 C69 100 70 110 70 118Z",f:"#1e6034"},
+      {d:"M70 118 C70 88 68 56 62 30 C70 26 72 56 72 86 C71 100 70 110 70 118Z",f:"#246638"},
+      {d:"M70 118 C72 90 82 58 98 34 C106 40 88 60 74 88 C72 100 71 110 70 118Z",f:"#1e6034"},
+      {d:"M70 118 C74 92 90 62 116 42 C120 50 96 66 76 90 C73 98 71 110 70 118Z",f:"#246638"},
+      {d:"M70 118 C76 95 98 68 132 52 C132 60 106 72 78 94 C74 102 71 112 70 118Z",f:"#1a5c30"},
+    ]).map((b,i)=>(
+      <g key={i}><path d={b.d} fill={b.f} opacity="0.90"/><path d={b.d} fill="none" stroke="#0c2818" strokeWidth="1.4" opacity="0.68"/></g>
+    ))}
+  </svg>
+);
 
 export const GREENERY = [
   { id:"eucalyptus", name:"Eucalyptus",   icon:<Eucalyptus />  },
