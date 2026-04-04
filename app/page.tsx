@@ -1107,13 +1107,13 @@ function CursorTrail() {
 function BouquetShowcase() {
   // 7 flowers in a natural arc fan
   const flowers = [
-    { Component: RoseSVG,     size: 64, x: 85,  y: 130, rotate: -30, delay: "0s",    color: "rose" },
-    { Component: TulipSVG,    size: 58, x: 130, y: 160, rotate: -15, delay: "0.3s",  color: "tulip" },
-    { Component: PeonySVG,    size: 70, x: 173, y: 142, rotate: 0,   delay: "0.6s",  color: "peony" },
-    { Component: DaisySVG,    size: 58, x: 215, y: 160, rotate: 15,  delay: "0.9s",  color: "daisy" },
-    { Component: RoseSVG,     size: 60, x: 255, y: 135, rotate: 28,  delay: "1.1s",  color: "rose2" },
-    { Component: LavenderSVG, size: 52, x: 103, y: 190, rotate: -22, delay: "0.15s", color: "lav" },
-    { Component: TulipSVG,    size: 50, x: 240, y: 188, rotate: 22,  delay: "0.75s", color: "tulip2" },
+    { Component: RoseSVG,     size: 64, x: 88,  y: 152, rotate: -30, delay: "0s",    color: "rose" },
+    { Component: TulipSVG,    size: 58, x: 111, y: 145, rotate: -15, delay: "0.3s",  color: "tulip" },
+    { Component: PeonySVG,    size: 70, x: 130, y: 143, rotate: 0,   delay: "0.6s",  color: "peony" },
+    { Component: DaisySVG,    size: 58, x: 159, y: 152, rotate: 15,  delay: "0.9s",  color: "daisy" },
+    { Component: RoseSVG,     size: 60, x: 178, y: 155, rotate: 28,  delay: "1.1s",  color: "rose2" },
+    { Component: LavenderSVG, size: 52, x: 104, y: 170, rotate: -22, delay: "0.15s", color: "lav" },
+    { Component: TulipSVG,    size: 50, x: 173, y: 171, rotate: 22,  delay: "0.75s", color: "tulip2" },
   ];
 
   return (
